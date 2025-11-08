@@ -1,10 +1,15 @@
 const express = require('express');
+const cors = require('cors'); // add this
+
 const app = express();
 const port = process.env.PORT || 5000;
+
+app.use(cors()); // add this
 
 const users = [
   { id: 1, name: 'Sabina', email: 'sabina@gmail.com' },
   { id: 2, name: 'Saba', email: 'saba@gmail.com' },
+  { id: 3, name: 'Sad', email: 'sad@gmail.com' },
 ];
 
 app.get('/user', (req, res) => {
